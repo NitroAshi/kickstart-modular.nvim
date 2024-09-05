@@ -162,10 +162,55 @@ return {
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        -- clangd = {},
-        -- gopls = {},
-        -- pyright = {},
-        -- rust_analyzer = {},
+  			clangd = {
+  				cmd = { "clangd", "-j=4", "--background-index", "--clang-tidy" },
+  				filetypes = { "c", "cpp", "objc", "objcpp" },
+  				-- root_dir = require("lspconfig.util").root_pattern("compile_commands.json","compile_flags.txt",".git"),
+  				settings = {
+  					clangd = {
+  						fallbackFlags = { "-std=c++17" },
+  					},
+  				},
+  			},
+  			-- gopls = {},
+  			pyright = {
+  				cmd = { "pyright-langserver", "--stdio" },
+  				filetypes = { "python" },
+  				-- root_dir = require("lspconfig.util").root_pattern(".git", "pyrightconfig.json"),
+  				-- settings = {
+  				-- 	python = {
+  				-- 		analysis = {
+  				-- 			typeCheckingMode = "strict",
+  				-- 			autoSearchPaths = true,
+  				-- 			useLibraryCodeForTypes = true,
+  				-- 		},
+  				-- 	},
+  				-- },
+  			},
+  			rust_analyzer = {
+  				cmd = { "rust-analyzer" },
+  				filetypes = { "rust" },
+  				-- root_dir = require("lspconfig.util").root_pattern("Cargo.toml", "rust-project.json"),
+  				-- settings = {
+  				-- 	["rust-analyzer"] = {
+  				-- 		cargo = {
+  				-- 			allFeatures = true,
+  				-- 		},
+  				-- 		checkOnSave = {
+  				-- 			command = "clippy",
+  				-- 		},
+  				-- 		inlayHints = {
+  				-- 			lifetimeElisionHints = { enable = true, useParameterNames = true },
+  				-- 			parameterHints = true,
+  				-- 			typeHints = true,
+        -- 			 },
+        -- 		 },
+        --   },
+         },
+  			bashls = {
+  				cmd = { "bash-language-server", "start" },
+  				filetypes = { "sh" },
+        },
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
@@ -203,7 +248,7 @@ return {
       -- for you, so that they are available from within Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
-        'stylua', -- Used to format Lua code
+        -- 'stylua', -- Used to format Lua code
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 

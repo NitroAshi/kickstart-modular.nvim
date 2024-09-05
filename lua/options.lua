@@ -7,7 +7,7 @@
 vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = false
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
@@ -18,7 +18,7 @@ vim.opt.showmode = false
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-vim.opt.clipboard = 'unnamedplus'
+-- vim.opt.clipboard = 'unnamedplus'
 
 -- Enable break indent
 vim.opt.breakindent = true
@@ -31,7 +31,7 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 -- Keep signcolumn on by default
-vim.opt.signcolumn = 'yes'
+-- vim.opt.signcolumn = 'yes'
 
 -- Decrease update time
 vim.opt.updatetime = 250
@@ -58,5 +58,32 @@ vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
+
+-- 提示80行的宽度
+vim.wo.colorcolumn = "80"
+
+-- 缩进4个空格为一个Tab
+vim.o.tabstop = 4
+vim.bo.tabstop = 4
+vim.o.softtabstop = 4
+vim.o.shiftround = true
+vim.o.shiftwidth = 4
+vim.bo.shiftwidth = 4
+
+-- 空格代替Tab
+vim.o.expandtab = true
+vim.bo.expandtab = true
+
+-- 新行对齐当前行
+vim.o.autoindent = true
+vim.bo.autoindent = true
+
+-- 样式
+-- vim.o.background = "dark"
+vim.o.termguicolors = true
+vim.opt.termguicolors = true
+
+-- 补全最多显示10行
+-- vim.o.pumheight = 10
 
 -- vim: ts=2 sts=2 sw=2 et
