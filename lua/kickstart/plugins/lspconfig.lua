@@ -185,6 +185,7 @@ return {
   						fallbackFlags = { "-std=c++17" },
   					},
   				},
+          capabilities = { offsetEncoding = { "utf-16" }, },
   			},
   			-- gopls = {},
   			pyright = {
