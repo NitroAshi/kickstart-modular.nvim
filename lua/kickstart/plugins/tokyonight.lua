@@ -7,21 +7,35 @@ return {
     'folke/tokyonight.nvim',
     lazy = false,
     priority = 1000, -- Make sure to load this before all the other start plugins.
-    init = function()
-      require("tokyonight").setup({
-              style = "storm",
-              transparent = true,
-              terminal_colors = false,
-      })
+    -- init = function()
+    --   require("tokyonight").setup({
+    --           style = "storm",
+    --           transparent = true,
+    --           terminal_colors = false,
+    --   })
+    --   -- Load the colorscheme here.
+    --   -- Like many other themes, this one has different styles, and you could load
+    --   -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
+    --   -- vim.cmd.colorscheme 'tokyonight'
+    --
+    --   -- You can configure highlights by doing something like:
+    --   -- vim.cmd.hi 'Comment gui=none' 
+    --   vim.cmd[[colorscheme tokyonight]]
+    --   vim.cmd("highlight Normal guibg=none ctermbg=none")
+    config = function()
+      ---@diagnostic disable-next-line: missing-fields
+      require('tokyonight').setup {
+        styles = {
+          comments = { italic = false }, -- Disable italics in comments
+        },
+        transparent = true,
+        terminal_colors = false,
+      }
+
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      -- vim.cmd.colorscheme 'tokyonight'
-
-      -- You can configure highlights by doing something like:
-      -- vim.cmd.hi 'Comment gui=none' 
-      vim.cmd[[colorscheme tokyonight]]
-      vim.cmd("highlight Normal guibg=none ctermbg=none")
+      vim.cmd.colorscheme 'tokyonight-storm'
     end,
   },
 }
