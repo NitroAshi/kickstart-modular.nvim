@@ -6,7 +6,7 @@ return {
   event = 'InsertEnter',
   opts = {
     panel = { enabled = false, layout = { position = 'right', ratio = 0.4 } },
-    suggestion = { enabled = true, auto_trigger = true },
+    suggestion = { enabled = false, auto_trigger = true },
     filetypes = {
       c = true,
       cpp = true,
