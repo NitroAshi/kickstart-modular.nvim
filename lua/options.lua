@@ -71,4 +71,9 @@ vim.o.scrolloff = 10
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
+-- Show a reference line at column 80
+vim.wo.colorcolumn = '80'
+-- Enable true color support
+vim.o.termguicolors = true
+
 -- vim: ts=2 sts=2 sw=2 et
