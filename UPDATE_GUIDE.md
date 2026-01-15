@@ -62,3 +62,7 @@ This project is a personal fork of [dam9000/kickstart-modular.nvim](https://gith
 
 ## Purpose
 This guide helps keep the fork up-to-date and maintainable, and serves as a memory aid for future updates or for automation.
+
+## Note on README.md in This Fork (English)
+
+When updating from upstream, you do **not** need to keep your fork's `README.md` identical to the upstream version. Instead, only update your `README.md` to document major differences or important changes in your configuration compared to upstream. Focus on describing your customizations and any significant functional differences, rather than mirroring all upstream documentation.
