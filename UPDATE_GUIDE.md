@@ -1,6 +1,6 @@
 # Update Guide for My kickstart-modular.nvim Fork
 
-## Quick Update Workflow (English)
+## Quick Update Workflow
 
 1. Add upstream remote (only once)
 2. Fetch upstream changes
@@ -63,6 +63,6 @@ This project is a personal fork of [dam9000/kickstart-modular.nvim](https://gith
 ## Purpose
 This guide helps keep the fork up-to-date and maintainable, and serves as a memory aid for future updates or for automation.
 
-## Note on README.md in This Fork (English)
+## Note on README.md in This Fork
 
 When updating from upstream, you do **not** need to keep your fork's `README.md` identical to the upstream version. Instead, only update your `README.md` to document major differences or important changes in your configuration compared to upstream. Focus on describing your customizations and any significant functional differences, rather than mirroring all upstream documentation.
