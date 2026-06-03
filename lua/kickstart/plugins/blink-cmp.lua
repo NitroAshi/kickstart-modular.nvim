@@ -75,15 +75,7 @@ return {
       },
 
       sources = {
-        default = { 'lsp', 'path', 'snippets', 'copilot' },
-        providers = {
-          copilot = {
-            name = 'copilot',
-            module = 'blink-cmp-copilot',
-            score_offset = 200,
-            async = true,
-          },
-        },
+        default = { 'lsp', 'path', 'snippets' },
       },
 
       snippets = { preset = 'luasnip' },

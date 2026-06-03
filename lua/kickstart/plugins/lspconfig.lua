@@ -122,27 +122,7 @@ return {
       --  See `:help lsp-config` for information about keys and how to configure
       ---@type table<string, vim.lsp.Config>
       local servers = {
-        clangd = {
-          cmd = {
-            'clangd',
-            '-j',
-            '2',
-            '--background-index',
-            '--clang-tidy',
-            '--completion-style=detailed',
-            '--header-insertion=never',
-          },
-          root_dir = require('lspconfig.util').root_pattern('compile_commands.json', '.git', 'Makefile'),
-          init_options = {
-            fallbackFlags = { '-std=c++20' },
-          },
-          -- settings = {
-          --   clangd = {
-          --     inlayHints = { enable = true },
-          --     semanticHighlighting = true,
-          --   },
-          -- },
-        },
+        -- clangd = {},
         -- gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},

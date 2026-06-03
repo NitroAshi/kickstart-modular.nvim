@@ -11,4 +11,6 @@ spell/
 # merge conflicts.
 lazy-lock.json
 
+docs/
+
 .DS_Store
