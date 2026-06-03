@@ -30,7 +30,6 @@ return {
         },
         opts = {},
       },
-      'folke/lazydev.nvim',
     },
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
@@ -76,10 +75,14 @@ return {
       },
 
       sources = {
-        default = { 'lsp', 'path', 'snippets', 'lazydev', 'copilot' },
+        default = { 'lsp', 'path', 'snippets', 'copilot' },
         providers = {
-          lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
-          copilot = { module = 'blink-cmp-copilot', score_offset = 200 },
+          copilot = {
+            name = 'copilot',
+            module = 'blink-cmp-copilot',
+            score_offset = 200,
+            async = true,
+          },
         },
       },
 
